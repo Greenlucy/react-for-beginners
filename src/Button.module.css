@@ -1,0 +1,11 @@
+/* 기본적인 css (style.css가 파일 이름일 때)
+button {
+    color: white;
+    background-color: tomato;
+} */
+
+/* class를 만들자 */
+.btn{
+    color: white;
+    background-color: tomato;
+}
