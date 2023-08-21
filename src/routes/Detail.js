@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, Router, Routes } from "react-router-dom";
+import styles from "./Detail.module.css";
 
 function Detail() {
   const { id } = useParams();
@@ -24,20 +25,29 @@ function Detail() {
   //   id, coverImg, title, summary, genres
   // 비동기이므로 loading 동안 기다려줄 수 있는 시간이 필요함.
   return (
-    <div>
+    <div className={styles.container}>
       {wait ? (
-        <h1>Please wait a moment..</h1>
+        <div className={styles.loader}>
+          <h1>Please wait a moment..</h1>
+        </div>
       ) : (
-        <div>
-          <img src={movie.medium_cover_image} alt={movie.title} />
+        <div className={styles.movie}>
+          <img
+            src={movie.large_cover_image}
+            alt={movie.title}
+            className={styles.movie__img}
+          />
           <h2>{movie.title}</h2>
           <div>
-            <span>runtime : {movie.runtime}</span>
-            <span>language : {movie.language}</span>
-            <span>rate : {movie.rating}</span>
+            <h3 className={styles.movie__year}>{movie.year}</h3>
+            <h3 className={styles.movie__runtime}>runtime : {movie.runtime}</h3>
+            <h3 className={styles.movie__language}>
+              language : {movie.language}
+            </h3>
+            <h3 className={styles.movie__rate}>rate : {movie.rating}</h3>
           </div>
           <p>{movie.description_full}</p>
-          <ul>
+          <ul className={styles.movie__genres}>
             {movie.genres.map((g) => (
               <li key={g}>{g}</li>
             ))}

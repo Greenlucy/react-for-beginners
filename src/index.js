@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import "./styles.css";
 // import reportWebVitals from './reportWebVitals'; -> 필요없으므로 주석해줌.
 
 // React 18 에서는 지원하지 않음. -> import ReactDOM from 'react-dom'; 으로 해야 오류 안 뜸.
@@ -17,5 +18,3 @@ root.render(
   <App />
   // </React.StrictMode>
 );
-
-// reportWebVitals(); // 이건 어디서 불러왔던걸까?
