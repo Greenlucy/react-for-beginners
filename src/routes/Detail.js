@@ -31,27 +31,48 @@ function Detail() {
           <h1>Please wait a moment..</h1>
         </div>
       ) : (
-        <div className={styles.movie}>
-          <img
-            src={movie.large_cover_image}
-            alt={movie.title}
-            className={styles.movie__img}
-          />
-          <h2>{movie.title}</h2>
-          <div>
-            <h3 className={styles.movie__year}>{movie.year}</h3>
-            <h3 className={styles.movie__runtime}>runtime : {movie.runtime}</h3>
-            <h3 className={styles.movie__language}>
-              language : {movie.language}
-            </h3>
-            <h3 className={styles.movie__rate}>rate : {movie.rating}</h3>
+        <div id="detail">
+          <div id="movie">
+            <h2 className={styles.movie__title}>{movie.title}</h2>
+            <div id="description">
+              <div id="mini1">
+                <div className={styles.flex__box}>
+                  <span>Release</span>
+                  <h3>{movie.year}</h3>
+                </div>
+                <div className={styles.flex__box}>
+                  <span>Genre</span>
+                  <ul className={styles.movie__genres}>
+                    {movie.genres.map((genre) => (
+                      <li key={genre}>
+                        <h3> {genre} | </h3>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className={styles.flex__box}>
+                  <span>Runtime</span>
+                  <h3>{movie.runtime}</h3>
+                </div>
+                <div className={styles.flex__box}>
+                  <span>Language</span>
+                  <h3>{movie.language}</h3>
+                </div>
+                <div className={styles.flex__box}>
+                  <span>Rate</span>
+                  <h3>{movie.rating}⭐</h3>
+                </div>
+                <h3>
+                  <p>{movie.description_full}</p>
+                </h3>
+              </div>
+              <img
+                src={movie.large_cover_image}
+                alt={movie.title}
+                className={styles.movie__img}
+              />
+            </div>
           </div>
-          <p>{movie.description_full}</p>
-          <ul className={styles.movie__genres}>
-            {movie.genres.map((g) => (
-              <li key={g}>{g}</li>
-            ))}
-          </ul>
         </div>
       )}
     </div>

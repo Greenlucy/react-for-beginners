@@ -1,65 +1,99 @@
-.container {
-    display: flex;
-    justify-content: center;
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+*{
+  padding: 0;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.3em;
 }
 
-.movie {
-    width: 80%;
-    padding-top: 70px;
-    background-color: white;
-    margin-bottom: 70px;
-    font-weight: 300;
-    padding: 50px;
-    border-radius: 5px;
-    color: #adaeb9;
-    display: grid;
-    grid-template-columns: minmax(150px, 1fr) 2fr;
-    grid-gap: 40px;
-    text-decoration: none;
-    color: inherit;
-    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
-  }
+.container {
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 100px;
+  max-width: 80%;
+  font-weight: 300;
+}
+
+#detail{
+  box-sizing: border-box;
+  height: 97vh;
+  left: 50%;
+  padding: 50px 250px;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 100%;
+}
+
+#movie {
+  background-color: hsla(0,0%,83%,.833);
+  border-radius: 5px;
+  padding: 13px;
+  display: flex;
+}
+
+.movie__title {
+  width: 100%;
+  padding-left: 10px;
+  font-size: 32px;
+}
+
+.movie__img {
+  /* display: inline; */
+  height: 400px;
+
+  margin-left: 45px;
+  margin-top: 30px;
+}
+
+#description{
+  background-color: #fff;
+  display: flex;
+  height: 500px;
+  margin-top: 20px;
+  padding-top: 10px;
+  /* width: 100%; */
+}
   
-  .movie__img {
-    position: relative;
-    top: -50px;
-    max-width: 150px;
-    width: 100%;
-    margin-right: 30px;
-    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-      0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
-  }
-  
-  .movie__title {
-    margin: 0;
-    font-weight: 300;
-    text-decoration: none;
-  }
-  
-  .movie__genres {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 5px 0px;
-  }
-  
-  .movie__genres li,
-  .movie__year,
-  .movie__runtime,
-  .movie__language,
-  .movie__rate {
+#mini1{
+  box-sizing: border-box;
+  height: 500px;
+  margin-right: 10px;
+  padding: 20px;
+  width: 50%;
+  display: flex;
+}
+
+#mini1>span{
+  display: inline-block;
+}
+
+.flex__box{
+  display: flex;
+  grid-gap: 10px;
+}
+
+.movie__genres{
+  list-style: none;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.movie__genres li{
     margin-right: 10px;
     font-size: 14px;
   }
 
-  .loader {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 300;
-  }
+.loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+}
